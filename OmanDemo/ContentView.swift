@@ -9,13 +9,22 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+    @State var selected = 0
+    init() {
+           //Use this if NavigationBarTitle is with displayMode = .inline
+            UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "Arial", size: 23)
+            , .foregroundColor : UIColor(red: 239/255, green: 211/255, blue: 121/255, alpha: 1.0)]
+        
+        
+       }
     var body: some View {
-        ZStack{
+
+        NavigationView{
+            ZStack{
             Color(red: 50/255, green: 51/255, blue: 51/255)
                 .edgesIgnoringSafeArea(.all)
-            
-            VStack(alignment: .center, spacing: -30) {
+            VStack(alignment: .center, spacing: -39) {
+                
                 HStack {
                     customImages(images: "DG-awards", imageText: "Shops")
                     Spacer()
@@ -47,14 +56,21 @@ struct ContentView: View {
                     Spacer()
                     customImages(images: "DG-Passenger Insurance", imageText: "Passenger Insurance")
                 }.padding(30)
+                tabBarImages(selected: self.$selected)
+                                
             }
+                
+            
+            .navigationBarTitle (Text("Services"), displayMode: .inline)
         }
     }
+}
+    
     
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View { ContentView()}
-    }
-}
+            }
+        }
 
 struct customImages: View {
     var images: String
@@ -66,7 +82,7 @@ struct customImages: View {
                     .frame(width: 90, height: 90)
                     .cornerRadius(40)
                 Image(images).resizable()
-                    .frame(width: 65, height: 65)
+                    .frame(width: 60, height: 60)
                     .aspectRatio(contentMode: .fit)
             }
             
@@ -74,5 +90,48 @@ struct customImages: View {
             .foregroundColor(Color(red: 239/255, green: 211/255, blue: 121/255))
                 .multilineTextAlignment(.center)
         }.frame(width: 120, height: 160, alignment: .center)
+    }
+}
+struct tabBarImages: View {
+     @Binding var selected : Int
+    var body: some View {
+        TabView {
+            Text("")
+                .tabItem{
+                    VStack{
+                        Image("Tab bar - 3 profile - off")
+                        
+                        Text("Services")
+                }
+            }
+        .tag(0)
+            
+            Text("")
+                    .tabItem{
+                        VStack{
+                            Image("Tab bar - 2 eWallet - off")
+                            Text("eWallet")
+                    }
+                }
+            .tag(1)
+            
+            Text("")
+                    .tabItem{
+                        VStack{
+                            Image("Tab bar - 1 Offers - off")
+                            Text("Offers")
+                    }
+                }
+            .tag(2)
+            
+            Text("")
+                    .tabItem{
+                        VStack{
+                            Image("Tab bar - 0 Service - off")
+                            Text("Services")
+                    }
+                }
+            .tag(3)
+        }
     }
 }
