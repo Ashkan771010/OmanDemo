@@ -84,6 +84,8 @@ struct customImages: View {
                 Image(images).resizable()
                     .frame(width: 60, height: 60)
                     .aspectRatio(contentMode: .fit)
+            }.onTapGesture {
+                webView(url: "https://www.google.com")
             }
             
             Text(imageText)

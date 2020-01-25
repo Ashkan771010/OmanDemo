@@ -13,6 +13,8 @@
 		83CFE29C23DB2EBD00D7102D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83CFE29B23DB2EBD00D7102D /* Assets.xcassets */; };
 		83CFE29F23DB2EBD00D7102D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83CFE29E23DB2EBD00D7102D /* Preview Assets.xcassets */; };
 		83CFE2A223DB2EBD00D7102D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83CFE2A023DB2EBD00D7102D /* LaunchScreen.storyboard */; };
+		840C689023DC75F600ECBC88 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C688F23DC75F600ECBC88 /* WebView.swift */; };
+		840C689223DC797C00ECBC88 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C689123DC797C00ECBC88 /* SwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		83CFE29E23DB2EBD00D7102D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		83CFE2A123DB2EBD00D7102D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83CFE2A323DB2EBD00D7102D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		840C688F23DC75F600ECBC88 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		840C689123DC797C00ECBC88 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +63,12 @@
 				83CFE29523DB2EBC00D7102D /* AppDelegate.swift */,
 				83CFE29723DB2EBC00D7102D /* SceneDelegate.swift */,
 				83CFE29923DB2EBC00D7102D /* ContentView.swift */,
+				840C689123DC797C00ECBC88 /* SwiftUIView.swift */,
 				83CFE29B23DB2EBD00D7102D /* Assets.xcassets */,
 				83CFE2A023DB2EBD00D7102D /* LaunchScreen.storyboard */,
 				83CFE2A323DB2EBD00D7102D /* Info.plist */,
 				83CFE29D23DB2EBD00D7102D /* Preview Content */,
+				840C688F23DC75F600ECBC88 /* WebView.swift */,
 			);
 			path = OmanDemo;
 			sourceTree = "<group>";
@@ -147,8 +153,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				83CFE29623DB2EBC00D7102D /* AppDelegate.swift in Sources */,
+				840C689023DC75F600ECBC88 /* WebView.swift in Sources */,
 				83CFE29823DB2EBC00D7102D /* SceneDelegate.swift in Sources */,
 				83CFE29A23DB2EBC00D7102D /* ContentView.swift in Sources */,
+				840C689223DC797C00ECBC88 /* SwiftUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
