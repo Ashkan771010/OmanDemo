@@ -14,54 +14,79 @@ struct ContentView: View {
            //Use this if NavigationBarTitle is with displayMode = .inline
             UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "Arial", size: 23)
             , .foregroundColor : UIColor(red: 239/255, green: 211/255, blue: 121/255, alpha: 1.0)]
-        
-        
+        UITabBar.appearance().backgroundColor = UIColor(red: 32/255, green: 32/255, blue: 32/255, alpha: 1.0)
+    
        }
     var body: some View {
-
+        
         NavigationView{
             ZStack{
             Color(red: 50/255, green: 51/255, blue: 51/255)
                 .edgesIgnoringSafeArea(.all)
             VStack(alignment: .center, spacing: -39) {
-                
                 HStack {
-                    customImages(images: "DG-awards", imageText: "Shops")
+                    NavigationLink(destination: SwiftUIView()){
+                        
+                        customImages(images: "DG-awards", imageText: "Shops")
+                    }
                     Spacer()
+                    NavigationLink(destination: SwiftUIView()){
                     customImages(images: "DG-vehicle services", imageText: "Taxi Credit")
+                    }
                     Spacer()
+                    NavigationLink(destination: SwiftUIView()){
                     customImages(images: "DG-airplane ticket", imageText: "Flights")
+                    }
                 }.padding(30)
                 
                 HStack{
+                    NavigationLink(destination: SwiftUIView()){
                     customImages(images: "DG-internet", imageText: "Internet Packages")
+                    }
                     Spacer()
+                    NavigationLink(destination: SwiftUIView()){
                     customImages(images: "DG-charge-up", imageText: "SIM Credit")
+                    }
                     Spacer()
+                    NavigationLink(destination: SwiftUIView()){
                     customImages(images: "DG-bill payment", imageText: "Bill Payment")
+                    }
                 }.padding(30)
                 
                 HStack{
+                    NavigationLink(destination: SwiftUIView()){
                     customImages(images: "DG-bus ticket", imageText: "Local Tours")
+                    }
                     Spacer()
+                    NavigationLink(destination: SwiftUIView()){
                     customImages(images: "DG-Insurance", imageText: "Insurance")
+                    }
                     Spacer()
+                    NavigationLink(destination: SwiftUIView()){
                     customImages(images: "DG-Exhibitions", imageText: "Exhibitions")
+                    }
                 }.padding(30)
                 
                 HStack{
+                    NavigationLink(destination: SwiftUIView()){
                     customImages(images: "DG-card to card", imageText: "Exchangers")
+                    }
                     Spacer()
+                    NavigationLink(destination: SwiftUIView()){
                     customImages(images: "DG-internet-1", imageText: "Visa Services")
+                    }
                     Spacer()
+                    NavigationLink(destination: SwiftUIView()){
                     customImages(images: "DG-Passenger Insurance", imageText: "Passenger Insurance")
+                    }
                 }.padding(30)
                 tabBarImages(selected: self.$selected)
                                 
             }
                 
             
-            .navigationBarTitle (Text("Services"), displayMode: .inline)
+            .navigationBarTitle (Text("Services"), displayMode: .inline).navigationBarItems(leading: Image(systemName: "person.circle.fill"), trailing: Image(systemName: "trash.fill")
+                ).foregroundColor(Color(red: 239/255, green: 211/255, blue: 121/255))
         }
     }
 }
@@ -82,12 +107,11 @@ struct customImages: View {
                     .frame(width: 90, height: 90)
                     .cornerRadius(40)
                 Image(images).resizable()
+                    .foregroundColor(Color(red: 239/255, green: 211/255, blue: 121/255))
                     .frame(width: 60, height: 60)
                     .aspectRatio(contentMode: .fit)
-            }.onTapGesture {
-                webView(url: "https://www.google.com")
+                
             }
-            
             Text(imageText)
             .foregroundColor(Color(red: 239/255, green: 211/255, blue: 121/255))
                 .multilineTextAlignment(.center)
